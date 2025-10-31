@@ -1,44 +1,44 @@
 import React, { useState } from 'react';
 
 const Portfolio = () => {
-    const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('all');
 
-    const portfolioItems = [
-        { id: 1, category: 'art', image: 'artworks/norway belvoedkv.jpg' },
-        { id: 2, category: 'art', image: 'artworks/sanji cooking.png' },
-        { id: 3, category: 'art', image: 'artworks/monster_trio.png' },
-        { id: 4, category: 'art', image: 'artworks/batman.png' },
-        { id: 5, category: 'art', image: 'artworks/bruce.png' },
-        { id: 6, category: 'art', image: 'artworks/techno 10 million project.jpg' },
-        { id: 7, category: 'art', image: 'artworks/sunkyu high school.jpg' },
-        { id: 8, category: 'art', image: 'artworks/kris_and_frisk.jpg' },
-        { id: 9, category: 'art', image: 'artworks/gym_sesh.png' },
+  const portfolioItems = [
+    { id: 1, category: 'art', image: 'artworks/norway belvoedkv.jpg' },
+    { id: 2, category: 'art', image: 'artworks/sanji cooking.png' },
+    { id: 3, category: 'art', image: 'artworks/monster_trio.png' },
+    { id: 4, category: 'art', image: 'artworks/batman.png' },
+    { id: 5, category: 'art', image: 'artworks/bruce.png' },
+    { id: 6, category: 'art', image: 'artworks/techno 10 million project.jpg' },
+    { id: 7, category: 'art', image: 'artworks/sunkyu high school.jpg' },
+    { id: 8, category: 'art', image: 'artworks/kris_and_frisk.jpg' },
+    { id: 9, category: 'art', image: 'artworks/gym_sesh.png' },
 
-        { id: 10, category: 'stickers', image: 'artworks/frieren.png' },
-        { id: 11, category: 'stickers', image: 'artworks/jjk.png' },
-        { id: 12, category: 'stickers', image: 'artworks/kny.png' },
+    { id: 10, category: 'stickers', image: 'artworks/frieren.png' },
+    { id: 11, category: 'stickers', image: 'artworks/jjk.png' },
+    { id: 12, category: 'stickers', image: 'artworks/kny.png' },
 
-        { id: 13, category: 'keychains', image: 'artworks/sans_keychain.png' },
-        { id: 14, category: 'keychains', image: 'artworks/frisk_keychain.png' },
-        { id: 15, category: 'keychains', image: 'artworks/gekko_keychain.png' },
-        { id: 16, category: 'keychains', image: 'artworks/jett_keychain.png' },
+    { id: 13, category: 'keychains', image: 'artworks/sans_keychain.png' },
+    { id: 14, category: 'keychains', image: 'artworks/frisk_keychain.png' },
+    { id: 15, category: 'keychains', image: 'artworks/gekko_keychain.png' },
+    { id: 16, category: 'keychains', image: 'artworks/jett_keychain.png' },
 
-        { id: 17, category: 'stickers', image: 'artworks/fun_gang_sheet.png' },
-        { id: 18, category: 'stickers', image: 'artworks/tenna_sheet.png' },
-        { id: 19, category: 'stickers', image: 'artworks/susie_frisk_car.png' },
-        { id: 20, category: 'stickers', image: 'artworks/wide_susie.png' },
-        { id: 21, category: 'stickers', image: 'artworks/star_walker.png' },
-        { id: 22, category: 'stickers', image: 'artworks/gekko_sticker.png' },
-        { id: 23, category: 'stickers', image: 'artworks/jett_sticker.png' },
-    ];
+    { id: 17, category: 'stickers', image: 'artworks/fun_gang_sheet.png' },
+    { id: 18, category: 'stickers', image: 'artworks/tenna_sheet.png' },
+    { id: 19, category: 'stickers', image: 'artworks/susie_frisk_car.png' },
+    { id: 20, category: 'stickers', image: 'artworks/wide_susie.png' },
+    { id: 21, category: 'stickers', image: 'artworks/star_walker.png' },
+    { id: 22, category: 'stickers', image: 'artworks/gekko_sticker.png' },
+    { id: 23, category: 'stickers', image: 'artworks/jett_sticker.png' },
+  ];
 
-    const filteredItems = activeFilter === 'all'
-        ? portfolioItems
-        : portfolioItems.filter(item => item.category === activeFilter);
+  const filteredItems = activeFilter === 'all'
+    ? portfolioItems
+    : portfolioItems.filter(item => item.category === activeFilter);
 
-    return (
-        <>
-            <style>{`
+  return (
+    <>
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Archivo+Narrow:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
 
         * {
@@ -664,174 +664,174 @@ const Portfolio = () => {
           }
         }
       `}</style>
-            <div>
-                {/* Header */}
-                <header>
-                    <div className="logo">
-                        <img
-                            src="https://via.placeholder.com/80x40/ffffff/dc2626?text=YNJ"
-                            alt="YNJ Logo"
-                        />
-                    </div>
-                    <nav className="font-inter">
-                        <a href="#art">Art & Design</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#contact">Contact</a>
-                    </nav>
-                </header>
+      <div>
+        {/* Header */}
+        <header>
+          <div className="logo">
+            <img
+              src="https://via.placeholder.com/80x40/ffffff/dc2626?text=YNJ"
+              alt="YNJ Logo"
+            />
+          </div>
+          <nav className="font-inter">
+            <a href="#art">Art & Design</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </header>
 
-                {/* Hero Section */}
-                <section className="hero-section">
-                    <div className="hero-container">
-                        <div className="hero-content">
-                            <div className="line-accent">
-                                <div className="line"></div>
-                                <div className="plus">+ + +</div>
-                            </div>
-                            <div className="hero-id">812391 // 21 // 99000</div>
-                            <h1 className="hero-title font-dm-serif">
-                                H<span className="italic">E</span>LL<span className="italic">O</span>.
-                            </h1>
-                            <p className="hero-subtitle font-lora">
-                                My name is<br />
-                                <span className="name">Ino – inozuart</span>
-                            </p>
-                            <div className="pixel-grid">
-                                {[...Array(16)].map((_, i) => (
-                                    <div key={i} className="pixel"></div>
-                                ))}
-                            </div>
-                            <div className="hero-info font-inter">
-                                <p><strong>Freelance Illustrator</strong></p>
-                                <p>University of Adelaide — 2025</p>
-                                <p>Graduate</p>
-                                <p className="welcome">Welcome to my portfolio website</p>
-                            </div>
-                        </div>
-                        <div className="hero-image-wrapper">
-                            <div className="hero-image-container">
-                                <div className="red-background"></div>
-                                <img
-                                    src="/artworks/duck girl clear.png"
-                                    alt="duck girl"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Projects Section */}
-                <section id="projects" className="projects-section">
-                    <div className="projects-container">
-                        <div className="section-header">
-                            <div className="line"></div>
-                            <h2 className="font-archivo">Projects</h2>
-                            <div className="line-flex"></div>
-                        </div>
-
-                        <div className="portfolio-title-wrapper">
-                            <h3 className="portfolio-title font-dm-serif">
-                                P<span className="italic">O</span>RTF<span className="italic">O</span>L<span className="italic">I</span><span className="italic">O</span>
-                            </h3>
-                            <div className="red-square"></div>
-                        </div>
-
-                        <p className="portfolio-description font-lora">This is my portfolio containing my art, merchandise, and more.</p>
-
-                        {/* Filter Buttons */}
-                        <div className="filter-buttons">
-                            <button
-                                onClick={() => setActiveFilter('all')}
-                                className={`filter-btn font-inter ${activeFilter === 'all' ? 'active-all' : ''}`}
-                            >
-                                All Projects
-                            </button>
-                            <button
-                                onClick={() => setActiveFilter('art')}
-                                className={`filter-btn font-inter ${activeFilter === 'art' ? 'active-art' : ''}`}
-                            >
-                                Art
-                            </button>
-                            <button
-                                onClick={() => setActiveFilter('stickers')}
-                                className={`filter-btn font-inter ${activeFilter === 'stickers' ? 'active-stickers' : ''}`}
-                            >
-                                Stickers
-                            </button>
-                            <button
-                                onClick={() => setActiveFilter('keychains')}
-                                className={`filter-btn font-inter ${activeFilter === 'keychains' ? 'active-keychains' : ''}`}
-                            >
-                                Keychains
-                            </button>
-                        </div>
-
-                        {/* Portfolio Grid */}
-                        <div
-                            className={`portfolio-grid ${activeFilter === 'stickers'
-                                ? 'stickers-view'
-                                : activeFilter === 'keychains'
-                                    ? 'keychains-view'
-                                    : ''
-                                }`}
-                        >
-                            {filteredItems.map((item) => (
-                                <div key={item.id} className="portfolio-item">
-                                    <img
-                                        src={item.image}
-                                        alt={`Portfolio item ${item.id}`}
-                                    />
-                                    <div className="overlay"></div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Contact Section */}
-                <section id="contact" className="contact-section">
-                    <div className="contact-container">
-                        <div className="section-header">
-                            <div className="line"></div>
-                            <h2 className="font-archivo">Contact</h2>
-                            <div className="line-flex"></div>
-                        </div>
-
-                        <div className="contact-content">
-                            <h3 className="contact-title font-dm-serif">
-                                L<span className="italic">E</span>T'S C<span className="italic">O</span>NN<span className="italic">E</span>CT
-                            </h3>
-                            <p className="contact-description font-lora">
-                                Follow me on social media to see my latest work and updates!
-                            </p>
-
-                            <div className="social-links">
-                                <a href="https://tumblr.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link tumblr">
-                                    <div className="social-icon">T</div>
-                                    <span className="font-inter">Tumblr</span>
-                                </a>
-                                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link twitter">
-                                    <div className="social-icon">𝕏</div>
-                                    <span className="font-inter">Twitter</span>
-                                </a>
-                                <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer" className="social-link youtube">
-                                    <div className="social-icon">▶</div>
-                                    <span className="font-inter">YouTube</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Footer */}
-                <footer>
-                    <div>
-                        <p className="font-inter">© 2025 Ino - inozuart. All rights reserved.</p>
-                    </div>
-                </footer>
+        {/* Hero Section */}
+        <section className="hero-section">
+          <div className="hero-container">
+            <div className="hero-content">
+              <div className="line-accent">
+                <div className="line"></div>
+                <div className="plus">+ + +</div>
+              </div>
+              <div className="hero-id">812391 // 21 // 99000</div>
+              <h1 className="hero-title font-dm-serif">
+                H<span className="italic">E</span>LL<span className="italic">O</span>.
+              </h1>
+              <p className="hero-subtitle font-lora">
+                My name is<br />
+                <span className="name">Ino – inozuart</span>
+              </p>
+              <div className="pixel-grid">
+                {[...Array(16)].map((_, i) => (
+                  <div key={i} className="pixel"></div>
+                ))}
+              </div>
+              <div className="hero-info font-inter">
+                <p><strong>Freelance Illustrator</strong></p>
+                <p>University of Adelaide — 2025</p>
+                <p>Graduate</p>
+                <p className="welcome">Welcome to my portfolio website</p>
+              </div>
             </div>
-        </>
-    );
+            <div className="hero-image-wrapper">
+              <div className="hero-image-container">
+                <div className="red-background"></div>
+                <img
+                  src="/artworks/duck girl clear.png"
+                  alt="duck girl"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="projects-section">
+          <div className="projects-container">
+            <div className="section-header">
+              <div className="line"></div>
+              <h2 className="font-archivo">Projects</h2>
+              <div className="line-flex"></div>
+            </div>
+
+            <div className="portfolio-title-wrapper">
+              <h3 className="portfolio-title font-dm-serif">
+                P<span className="italic">O</span>RTF<span className="italic">O</span>L<span className="italic">I</span><span className="italic">O</span>
+              </h3>
+              <div className="red-square"></div>
+            </div>
+
+            <p className="portfolio-description font-lora">This is my portfolio containing my art, merchandise, and more.</p>
+
+            {/* Filter Buttons */}
+            <div className="filter-buttons">
+              <button
+                onClick={() => setActiveFilter('all')}
+                className={`filter-btn font-inter ${activeFilter === 'all' ? 'active-all' : ''}`}
+              >
+                All Projects
+              </button>
+              <button
+                onClick={() => setActiveFilter('art')}
+                className={`filter-btn font-inter ${activeFilter === 'art' ? 'active-art' : ''}`}
+              >
+                Art
+              </button>
+              <button
+                onClick={() => setActiveFilter('stickers')}
+                className={`filter-btn font-inter ${activeFilter === 'stickers' ? 'active-stickers' : ''}`}
+              >
+                Stickers
+              </button>
+              <button
+                onClick={() => setActiveFilter('keychains')}
+                className={`filter-btn font-inter ${activeFilter === 'keychains' ? 'active-keychains' : ''}`}
+              >
+                Keychains
+              </button>
+            </div>
+
+            {/* Portfolio Grid */}
+            <div
+              className={`portfolio-grid ${activeFilter === 'stickers'
+                ? 'stickers-view'
+                : activeFilter === 'keychains'
+                  ? 'keychains-view'
+                  : ''
+                }`}
+            >
+              {filteredItems.map((item) => (
+                <div key={item.id} className="portfolio-item">
+                  <img
+                    src={item.image}
+                    alt={`Portfolio item ${item.id}`}
+                  />
+                  <div className="overlay"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="contact-section">
+          <div className="contact-container">
+            <div className="section-header">
+              <div className="line"></div>
+              <h2 className="font-archivo">Contact</h2>
+              <div className="line-flex"></div>
+            </div>
+
+            <div className="contact-content">
+              <h3 className="contact-title font-dm-serif">
+                L<span className="italic">E</span>T'S C<span className="italic">O</span>NN<span className="italic">E</span>CT
+              </h3>
+              <p className="contact-description font-lora">
+                Follow me on social media to see my latest work and updates!
+              </p>
+
+              <div className="social-links">
+                <a href="https://tumblr.com/inozuart" target="_blank" rel="noopener noreferrer" className="social-link tumblr">
+                  <div className="social-icon">T</div>
+                  <span className="font-inter">Tumblr</span>
+                </a>
+                <a href="https://twitter.com/inozuart" target="_blank" rel="noopener noreferrer" className="social-link twitter">
+                  <div className="social-icon">𝕏</div>
+                  <span className="font-inter">Twitter</span>
+                </a>
+                <a href="https://youtube.com/@inozuart" target="_blank" rel="noopener noreferrer" className="social-link youtube">
+                  <div className="social-icon">▶</div>
+                  <span className="font-inter">YouTube</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer>
+          <div>
+            <p className="font-inter">© 2025 Ino - inozuart. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
 };
 
 export default Portfolio;
