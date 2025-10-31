@@ -667,12 +667,6 @@ const Portfolio = () => {
       <div>
         {/* Header */}
         <header>
-          <div className="logo">
-            {/* <img
-              src="https://via.placeholder.com/80x40/ffffff/dc2626?text=YNJ"
-              alt="YNJ Logo"
-            /> */}
-          </div>
           <nav className="font-inter">
             <a href="#art">Art & Design</a>
             <a href="#projects">Projects</a>
