@@ -667,6 +667,7 @@ const Portfolio = () => {
       <div>
         {/* Header */}
         <header>
+          <div></div>
           <nav className="font-inter">
             <a href="#art">Art & Design</a>
             <a href="#projects">Projects</a>
