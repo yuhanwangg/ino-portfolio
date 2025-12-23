@@ -13,6 +13,13 @@ const Portfolio = () => {
     { id: 7, category: 'art', image: 'artworks/sunkyu high school.jpg' },
     { id: 8, category: 'art', image: 'artworks/kris_and_frisk.jpg' },
     { id: 9, category: 'art', image: 'artworks/gym_sesh.png' },
+    { id: 10, category: 'art', image: 'artworks/dante_all_three.png' },
+    { id: 11, category: 'art', image: 'artworks/dante_vergil.jpg' },
+    { id: 12, category: 'art', image: 'artworks/KAKYOINN.jpg' },
+    { id: 13, category: 'art', image: 'artworks/alley.png' },
+    { id: 14, category: 'art', image: 'artworks/hongice yeee.jpg' },
+    { id: 15, category: 'art', image: 'artworks/INK AND ERROR.jpg' },
+    { id: 16, category: 'art', image: 'artworks/hongice yeee.jpg' },
 
     { id: 10, category: 'stickers', image: 'artworks/frieren.png' },
     { id: 11, category: 'stickers', image: 'artworks/jjk.png' },
@@ -29,7 +36,8 @@ const Portfolio = () => {
     { id: 20, category: 'stickers', image: 'artworks/wide_susie.png' },
     { id: 21, category: 'stickers', image: 'artworks/star_walker.png' },
     { id: 22, category: 'stickers', image: 'artworks/gekko_sticker.png' },
-    { id: 23, category: 'stickers', image: 'artworks/jett_sticker.png' },
+    { id: 23, category: 'stickers', image: 'artworks/vergil_chair_back.png' },
+    { id: 24, category: 'stickers', image: 'artworks/vergil_chair_front.png' },
   ];
 
   const filteredItems = activeFilter === 'all'
@@ -354,183 +362,103 @@ const Portfolio = () => {
           margin-bottom: 2rem;
         }
 
-        .filter-buttons {
-          display: flex;
-          gap: 1rem;
-          margin-bottom: 2rem;
-          flex-wrap: wrap;
-        }
 
-        .filter-btn {
-          padding: 0.5rem 1.5rem;
-          border-radius: 0.25rem;
-          font-size: 0.875rem;
-          font-weight: 600;
-          cursor: pointer;
-          border: 1px solid #d1d5db;
-          background-color: white;
-          color: #1f2937;
-          transition: all 0.3s;
-        }
 
-        .filter-btn:hover { border-color: #dc2626; }
 
-        .filter-btn.active-all {
-          background-color: #dc2626;
-          color: white;
-          border-color: #dc2626;
-        }
-
-        .filter-btn.active-art {
-          background-color: #dc2626;
-          color: white;
-          border-color: #dc2626;
-        }
-
-        .filter-btn.active-stickers {
-          background-color: #22d3ee;
-          color: white;
-          border-color: #22d3ee;
-        }
-
-        .filter-btn.active-keychains {
-          background-color: #f59e0b;
-          color: white;
-          border-color: #f59e0b;
-        }
-
-        .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
-        }
-
-        /* Flexible layout for stickers and keychains */
-        .portfolio-grid.stickers-view,
-        .portfolio-grid.keychains-view {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        }
-        
-        /* Shared layout for sticker + keychain items */
-        .portfolio-item.stickers,{
-        background-color: transparent;
-        box-shadow: none;
-        padding: 0.75rem;
-        border-radius: 0.5rem;
-        transition: transform 0.3s, box-shadow 0.3s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 220px; /* consistent height */
-        }
-
-        /* Keychains — 4 per row (same as art) */
-.portfolio-grid.keychains-view {
-  grid-template-columns: repeat(4, 1fr);
+/* ---------- FILTER BUTTONS ---------- */
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
-        /* Hover effects */
-        .portfolio-item.stickers:hover,
-        .portfolio-item.keychains:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-        .portfolio-item.stickers {
-        background-color: transparent;
-        box-shadow: none;
-        padding: 0.75rem;
-        border-radius: 0.5rem;
-        transition: transform 0.3s, box-shadow 0.3s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 220px; /* Same height for all stickers */
-        }
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #1f2937;
+  transition: all 0.3s;
+}
 
-        .portfolio-item.stickers img {
-        height: 100%; /* consistent height */
-        width: auto; /* flexible width */
-        object-fit: contain;
-        display: block;
-        }
-        .portfolio-item {
-          position: relative;
-          overflow: hidden;
-          background-color: white;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-          cursor: pointer;
-          transition: box-shadow 0.3s;
-        }
+.filter-btn:hover {
+  border-color: #dc2626;
+}
 
-        .portfolio-item:hover {
-          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        }
+.filter-btn.active-all,
+.filter-btn.active-art {
+  background-color: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}
 
-        .portfolio-item img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.3s;
-        }
+.filter-btn.active-stickers {
+  background-color: #22d3ee;
+  color: white;
+  border-color: #22d3ee;
+}
 
-        .portfolio-item:hover img {
-          transform: scale(1.05);
-        }
+.filter-btn.active-keychains {
+  background-color: #f59e0b;
+  color: white;
+  border-color: #f59e0b;
+}
 
-        .portfolio-item .overlay {
-          position: absolute;
-          inset: 0;
-          background-color: rgba(0, 0, 0, 0);
-          transition: background-color 0.3s;
-        }
+/* ---------- MASONRY GRID ---------- */
+.portfolio-grid {
+  column-count: 4;
+  column-gap: 1rem;
+}
 
-        .portfolio-item:hover .overlay {
-          background-color: rgba(0, 0, 0, 0.2);
-        }
+/* Each item behaves like a masonry brick */
+.portfolio-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .portfolio-item.keychains {
-        background-color: transparent;
-        }
+/* Hover */
+.portfolio-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
 
-        .portfolio-item.keychains img {
-        object-fit: contain;
-        background-color: transparent;
-        }
+/* Images keep original aspect ratio */
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 
-        .portfolio-item.stickers {
-        background-color: transparent;
-        box-shadow: none;
-        width: auto;
-        height: auto;
-        padding: 0.75rem;
-        border-radius: 0.5rem;
-        transition: transform 0.3s, box-shadow 0.3s;
-        }
+/* Overlay */
+.portfolio-item .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0);
+  transition: background-color 0.3s;
+}
 
-        .portfolio-item.stickers img {
-        width: auto;
-        height: auto;
-        max-width: 220px;  /* adjust this if you want bigger stickers */
-        max-height: 220px;
-        object-fit: contain;
-        display: block;
-        margin: 0 auto;
-        }
+.portfolio-item:hover .overlay {
+  background-color: rgba(0,0,0,0.15);
+}
 
-        .portfolio-item.stickers:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-        footer {
-          background-color: #dc2626;
-          color: white;
-          padding: 3rem 2rem;
-          text-align: center;
-        }
-
-        
+/* ---------- CATEGORY STYLING (VISUAL ONLY) ---------- */
+.portfolio-item.stickers,
+.portfolio-item.keychains {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0.75rem;
+}
 
         footer p { font-size: 0.875rem; }
 
@@ -635,9 +563,9 @@ const Portfolio = () => {
           .about-container {
             grid-template-columns: 1fr;
           }
-          .portfolio-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
+  .portfolio-grid {
+    column-count: 3;
+  }
         }
 
         @media (max-width: 768px) {
@@ -647,7 +575,7 @@ const Portfolio = () => {
           }
           .hero-title { font-size: 5rem; }
           .portfolio-grid {
-            grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
           }
           .portfolio-title { font-size: 2.5rem; }
           .about-title h3 { font-size: 2rem; }
@@ -669,9 +597,12 @@ const Portfolio = () => {
         <header>
           <div></div>
           <nav className="font-inter">
-            <a href="#art">Art & Design</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <nav className="font-inter">
+              <a href="#about">About Me</a>
+              <a href="#projects">Projects</a>
+              <a href="#commissions">Commissions</a>
+              <a href="#contact">Contact</a>
+            </nav>
           </nav>
         </header>
 
@@ -714,6 +645,8 @@ const Portfolio = () => {
             </div>
           </div>
         </section>
+
+        {/* Commissions Section */}
 
         {/* Projects Section */}
         <section id="projects" className="projects-section">
