@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-
+  const [expandedCard, setExpandedCard] = useState(null);
   const portfolioItems = [
     { id: 1, category: 'art', image: 'artworks/norway belvoedkv.jpg' },
     { id: 2, category: 'art', image: 'artworks/sanji cooking.png' },
@@ -21,23 +21,28 @@ const Portfolio = () => {
     { id: 15, category: 'art', image: 'artworks/INK AND ERROR.jpg' },
     { id: 16, category: 'art', image: 'artworks/hongice yeee.jpg' },
 
-    { id: 10, category: 'stickers', image: 'artworks/frieren.png' },
-    { id: 11, category: 'stickers', image: 'artworks/jjk.png' },
-    { id: 12, category: 'stickers', image: 'artworks/kny.png' },
+    { id: 17, category: 'stickers', image: 'artworks/frieren.png' },
+    { id: 18, category: 'stickers', image: 'artworks/jjk.png' },
+    { id: 19, category: 'stickers', image: 'artworks/kny.png' },
 
-    { id: 13, category: 'keychains', image: 'artworks/sans_keychain.png' },
-    { id: 14, category: 'keychains', image: 'artworks/frisk_keychain.png' },
-    { id: 15, category: 'keychains', image: 'artworks/gekko_keychain.png' },
-    { id: 16, category: 'keychains', image: 'artworks/jett_keychain.png' },
+    { id: 20, category: 'keychains', image: 'artworks/sans_keychain.png' },
+    { id: 21, category: 'keychains', image: 'artworks/frisk_keychain.png' },
+    { id: 22, category: 'keychains', image: 'artworks/gekko_keychain.png' },
+    { id: 23, category: 'keychains', image: 'artworks/jett_keychain.png' },
 
-    { id: 17, category: 'stickers', image: 'artworks/fun_gang_sheet.png' },
-    { id: 18, category: 'stickers', image: 'artworks/tenna_sheet.png' },
-    { id: 19, category: 'stickers', image: 'artworks/susie_frisk_car.png' },
-    { id: 20, category: 'stickers', image: 'artworks/wide_susie.png' },
-    { id: 21, category: 'stickers', image: 'artworks/star_walker.png' },
-    { id: 22, category: 'stickers', image: 'artworks/gekko_sticker.png' },
-    { id: 23, category: 'stickers', image: 'artworks/vergil_chair_back.png' },
-    { id: 24, category: 'stickers', image: 'artworks/vergil_chair_front.png' },
+    { id: 24, category: 'stickers', image: 'artworks/fun_gang_sheet.png' },
+    { id: 25, category: 'stickers', image: 'artworks/tenna_sheet.png' },
+    { id: 26, category: 'stickers', image: 'artworks/susie_frisk_car.png' },
+    { id: 27, category: 'stickers', image: 'artworks/wide_susie.png' },
+    { id: 28, category: 'stickers', image: 'artworks/star_walker.png' },
+    { id: 29, category: 'stickers', image: 'artworks/gekko_sticker.png' },
+    { id: 30, category: 'stickers', image: 'artworks/vergil_chair_back.png' },
+    { id: 31, category: 'stickers', image: 'artworks/vergil_chair_front.png' },
+
+    { id: 32, category: 'art', image: 'artworks/castle_techno.jpeg' },
+    { id: 33, category: 'art', image: 'artworks/heavens_gate.jpeg' },
+    { id: 34, category: 'art', image: 'artworks/masquerade_techno.jpeg' },
+    { id: 35, category: 'art', image: 'artworks/techno_birthday.jpeg' },
   ];
 
   const filteredItems = activeFilter === 'all'
@@ -452,6 +457,123 @@ const Portfolio = () => {
   background-color: rgba(0,0,0,0.15);
 }
 
+.art-stall-section {
+  padding: 4rem 2rem;
+  border-bottom: 2px solid #d1d5db;
+  background-color: #f5f5f4;
+}
+
+.art-stall-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.art-stall-title-wrapper {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.art-stall-title {
+  font-size: 8rem;
+  font-weight: bold;
+}
+
+.art-stall-title .italic {
+  font-style: italic;
+}
+
+.art-stall-red-square {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8rem;
+  height: 8rem;
+  background-color: #dc2626;
+}
+
+/* Cards layout */
+.art-stall-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.art-stall-card {
+  background: white;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.art-stall-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.art-stall-card img {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+}
+
+.art-stall-card-content {
+  padding: 1.5rem;
+}
+
+.art-stall-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.art-stall-card p {
+  font-size: 0.875rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .art-stall-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .art-stall-title {
+    font-size: 3rem;
+  }
+
+  .art-stall-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Expand animation */
+.art-stall-card-content p {
+  transition: all 0.3s ease;
+}
+
+.read-more-btn {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.3s;
+}
+
+.read-more-btn:hover {
+  opacity: 0.7;
+}
+
+.art-stall-card.expanded {
+  transform: translateY(-6px);
+}
+
 /* ---------- CATEGORY STYLING (VISUAL ONLY) ---------- */
 .portfolio-item.stickers,
 .portfolio-item.keychains {
@@ -600,7 +722,7 @@ const Portfolio = () => {
             <nav className="font-inter">
               <a href="#about">About Me</a>
               <a href="#projects">Projects</a>
-              <a href="#commissions">Commissions</a>
+              {/* <a href="#commissions">Commissions</a> */}
               <a href="#contact">Contact</a>
             </nav>
           </nav>
@@ -647,6 +769,99 @@ const Portfolio = () => {
         </section>
 
         {/* Commissions Section */}
+
+        {/* Art stall section */}
+        <section id="art-stalling" className="art-stall-section">
+          <div className="art-stall-container">
+
+            <div className="section-header">
+              <div className="line"></div>
+              <h2 className="font-archivo">Artist Alleys</h2>
+              <div className="line-flex"></div>
+            </div>
+
+            <div className="art-stall-title-wrapper">
+              <h3 className="art-stall-title font-dm-serif">
+                <span className="italic">A</span>RT ST<span className="italic">A</span>LLS
+              </h3>
+            </div>
+
+            <p className="portfolio-description font-lora">
+              It's always been a dream of mine to do art stalls since I first attended AvCon in 2019. I finally had the chance
+              to do so at the end of 2025, and what an absolute dream it has been! Sharing my art,
+              meeting other artists, and connecting with the community has been one of
+              the highlights of that year.
+            </p>
+
+            <div className="art-stall-grid">
+
+              {[
+                {
+                  id: 1,
+                  title: "AnimeGo 2025",
+                  image: "/artworks/stall_event1.png",
+                  preview: "My first ever artist alley experience will always be a special one, and AnimeGo had everything all at once! I met so many amazing local artists with the smaller venue...",
+                  full: `
+                    My first ever artist alley experience will always be a special one, and AnimeGo had everything all at once!
+                    I met so many amazing local artists with the smaller venue. The cosplay community in Adelaide was just so
+                    inspiring and wonderful to talk to. This truly made my dream come true to see so many like-minded individuals,
+                    I felt a part of my inner child heal seeing art around me, which I have the community to thank. Of course the
+                    first experience taught me how much I lacked with my display and brought the chaos I expected, for instance,
+                    immediately running out of packaging, struggling with organisation behind my stall, and my square reader dying
+                    in the middle of a transaction. The most memorable of these struggles was definitely
+                    finishing a 30% weighted assignment that I realised was due at 5pm not 11:59pm as I first believed. I couldn't
+                    of asked for a better first experience!
+                  `
+                },
+                {
+                  id: 2,
+                  title: "Supanova Adelaide 2025",
+                  image: "/artworks/stall_event2.png",
+                  preview: "This was a massive step up from the smaller AnimeGo event the week before! I was vastly underprepared with the stock as I had definitely not stocked enough for two conventions in a row. Despite this...",
+                  full: `
+                  This was a massive step up from the smaller AnimeGo event the week before! I was vastly underprepared with the stock as I had definitely not stocked enough for two conventions in a row. Despite this, it was a great experience! I learnt a lot about how to keep everything more organised, and started discussing commissions to talk other business opportunities besides the merchandise I sold. The three days of 9am-6pm was truly brutal, but so worth it. My highlights are always the amazing cosplayers and artists that I got to meet on the day. It really inspired me to keep creating and make even better works for my future events.
+                  `
+                },
+                {
+                  id: 3,
+                  title: "AvCon Christmas Markets 2025",
+                  image: "/artworks/stall_event3.png",
+                  preview: "I had an amazing time with the AvCon Christmas markets, and I think this one especially hit a bit closer. Supporting and spreading awareness of charity organisations has always been a goal of mine with my art...",
+                  full: `
+                  I had an amazing time with the AvCon Christmas markets, and I think this one especially hit a bit closer. Supporting and spreading awareness of charity organisations has always been a goal of mine with my art as well. A lot of my inspiration and years drawing came from my time as a Technoblade fan. His passing impacted me a lot mentally, and I think being able to raise money for the Sarcoma foundation in this event helped bring a part of that healing to a close as well. Knowing that I can support something and help the community with these donations, as well as the Games 4 Kids initiative, made me know that starting this stall was worth it. This was the last artist alley I participated in the year, and what a sweet note it was to end 2025 off with!
+                  `
+                }
+              ].map((event) => {
+                const isExpanded = expandedCard === event.id;
+
+                return (
+                  <div key={event.id} className={`art-stall-card ${isExpanded ? "expanded" : ""}`}>
+                    <img src={event.image} alt={event.title} />
+
+                    <div className="art-stall-card-content">
+                      <h4 className="font-archivo">{event.title}</h4>
+
+                      <p className="font-inter">
+                        {isExpanded ? event.full : event.preview}
+                      </p>
+
+                      <button
+                        className="read-more-btn font-inter"
+                        onClick={() =>
+                          setExpandedCard(isExpanded ? null : event.id)
+                        }
+                      >
+                        {isExpanded ? "Read Less —" : "Read More +"}
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+
+            </div>
+
+          </div>
+        </section>
 
         {/* Projects Section */}
         <section id="projects" className="projects-section">
