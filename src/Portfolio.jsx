@@ -721,8 +721,7 @@ const Portfolio = () => {
           <nav className="font-inter">
             <nav className="font-inter">
               <a href="#about">About Me</a>
-              <a href="#projects">Projects</a>
-              {/* <a href="#commissions">Commissions</a> */}
+              <a href="#projects">Portfolio</a>
               <a href="#contact">Contact</a>
             </nav>
           </nav>
@@ -742,7 +741,7 @@ const Portfolio = () => {
               </h1>
               <p className="hero-subtitle font-lora">
                 My name is<br />
-                <span className="name">Ino – inozuart</span>
+                <span className="name">Ino — inozuart</span>
               </p>
               <div className="pixel-grid">
                 {[...Array(16)].map((_, i) => (
@@ -879,7 +878,7 @@ const Portfolio = () => {
               <div className="red-square"></div>
             </div>
 
-            <p className="portfolio-description font-lora">This is my portfolio containing my art, merchandise, and more.</p>
+            <p className="portfolio-description font-lora">This is my portfolio containing my art, merchandise, and more. Use the filters below to check out my art portfolio, and to see what stickers and keychains I have available at my stall! Online shop will be coming soon...</p>
 
             {/* Filter Buttons */}
             <div className="filter-buttons">
@@ -893,7 +892,7 @@ const Portfolio = () => {
                 onClick={() => setActiveFilter('art')}
                 className={`filter-btn font-inter ${activeFilter === 'art' ? 'active-art' : ''}`}
               >
-                Art
+                Art Showcase
               </button>
               <button
                 onClick={() => setActiveFilter('stickers')}
@@ -923,6 +922,8 @@ const Portfolio = () => {
                   <img
                     src={item.image}
                     alt={`Portfolio item ${item.id}`}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="overlay"></div>
                 </div>
