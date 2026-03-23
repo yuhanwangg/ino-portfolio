@@ -4,45 +4,49 @@ const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [expandedCard, setExpandedCard] = useState(null);
   const portfolioItems = [
-    { id: 1, category: 'art', image: 'artworks/norway belvoedkv.jpg' },
-    { id: 2, category: 'art', image: 'artworks/sanji cooking.png' },
-    { id: 3, category: 'art', image: 'artworks/monster_trio.png' },
-    { id: 4, category: 'art', image: 'artworks/batman.png' },
-    { id: 5, category: 'art', image: 'artworks/bruce.png' },
-    { id: 6, category: 'art', image: 'artworks/techno 10 million project.jpg' },
-    { id: 7, category: 'art', image: 'artworks/sunkyu high school.jpg' },
-    { id: 8, category: 'art', image: 'artworks/kris_and_frisk.jpg' },
-    { id: 9, category: 'art', image: 'artworks/gym_sesh.png' },
-    { id: 10, category: 'art', image: 'artworks/dante_all_three.png' },
-    { id: 11, category: 'art', image: 'artworks/dante_vergil.jpg' },
-    { id: 12, category: 'art', image: 'artworks/KAKYOINN.jpg' },
-    { id: 13, category: 'art', image: 'artworks/alley.png' },
-    { id: 14, category: 'art', image: 'artworks/hongice yeee.jpg' },
-    { id: 15, category: 'art', image: 'artworks/INK AND ERROR.jpg' },
-    { id: 16, category: 'art', image: 'artworks/hongice yeee.jpg' },
+    { id: 1, category: 'art', image: 'artworks/norway belvoedkv.webp' },
+    { id: 2, category: 'art', image: 'artworks/sanji cooking.webp' },
+    { id: 3, category: 'art', image: 'artworks/monster_trio.webp' },
+    { id: 4, category: 'art', image: 'artworks/batman.webp' },
+    { id: 5, category: 'art', image: 'artworks/bruce.webp' },
+    { id: 6, category: 'art', image: 'artworks/techno 10 million project.webp' },
+    { id: 7, category: 'art', image: 'artworks/sunkyu high school.webp' },
+    { id: 8, category: 'art', image: 'artworks/kris_and_frisk.webp' },
+    { id: 9, category: 'art', image: 'artworks/gym_sesh.webp' },
+    { id: 10, category: 'art', image: 'artworks/dante_all_three.webp' },
+    { id: 11, category: 'art', image: 'artworks/dante_vergil.webp' },
+    { id: 12, category: 'art', image: 'artworks/KAKYOINN.webp' },
+    { id: 13, category: 'art', image: 'artworks/alley.webp' },
+    { id: 14, category: 'art', image: 'artworks/hongice yeee.webp' },
+    { id: 15, category: 'art', image: 'artworks/INK AND ERROR.webp' },
 
-    { id: 17, category: 'stickers', image: 'artworks/frieren.png' },
-    { id: 18, category: 'stickers', image: 'artworks/jjk.png' },
-    { id: 19, category: 'stickers', image: 'artworks/kny.png' },
+    { id: 16, cateory: 'stickers', image: 'stickers/jett_sticker.webp' },
+    { id: 17, category: 'stickers', image: 'stickers/frieren.webp' },
+    { id: 18, category: 'stickers', image: 'stickers/jjk.webp' },
+    { id: 19, category: 'stickers', image: 'stickers/kny.webp' },
 
-    { id: 20, category: 'keychains', image: 'artworks/sans_keychain.png' },
-    { id: 21, category: 'keychains', image: 'artworks/frisk_keychain.png' },
-    { id: 22, category: 'keychains', image: 'artworks/gekko_keychain.png' },
-    { id: 23, category: 'keychains', image: 'artworks/jett_keychain.png' },
+    { id: 20, category: 'keychains', image: 'keychains/sans_keychain.webp' },
+    { id: 21, category: 'keychains', image: 'keychains/frisk_keychain.webp' },
+    { id: 22, category: 'keychains', image: 'keychains/gekko_keychain.webp' },
+    { id: 23, category: 'keychains', image: 'keychains/jett_keychain.webp' },
 
-    { id: 24, category: 'stickers', image: 'artworks/fun_gang_sheet.png' },
-    { id: 25, category: 'stickers', image: 'artworks/tenna_sheet.png' },
-    { id: 26, category: 'stickers', image: 'artworks/susie_frisk_car.png' },
-    { id: 27, category: 'stickers', image: 'artworks/wide_susie.png' },
-    { id: 28, category: 'stickers', image: 'artworks/star_walker.png' },
-    { id: 29, category: 'stickers', image: 'artworks/gekko_sticker.png' },
-    { id: 30, category: 'stickers', image: 'artworks/vergil_chair_back.png' },
-    { id: 31, category: 'stickers', image: 'artworks/vergil_chair_front.png' },
+    { id: 24, category: 'stickers', image: 'stickers/fun_gang_sheet.webp' },
+    { id: 25, category: 'stickers', image: 'stickers/tenna_sheet.webp' },
+    { id: 26, category: 'stickers', image: 'stickers/susie_frisk_car.webp' },
+    { id: 27, category: 'stickers', image: 'stickers/wide_susie.webp' },
+    { id: 28, category: 'stickers', image: 'stickers/star_walker.webp' },
+    { id: 29, category: 'stickers', image: 'stickers/gekko_sticker.webp' },
+    { id: 30, category: 'stickers', image: 'stickers/vergil_chair_back.webp' },
+    { id: 31, category: 'stickers', image: 'stickers/vergil_chair_front.webp' },
 
-    { id: 32, category: 'art', image: 'artworks/castle_techno.jpeg' },
-    { id: 33, category: 'art', image: 'artworks/heavens_gate.jpeg' },
-    { id: 34, category: 'art', image: 'artworks/masquerade_techno.jpeg' },
-    { id: 35, category: 'art', image: 'artworks/techno_birthday.jpeg' },
+    { id: 32, category: 'art', image: 'artworks/castle_techno.webp' },
+    { id: 33, category: 'art', image: 'artworks/heavens_gate.webp' },
+    { id: 34, category: 'art', image: 'artworks/masquerade_techno.webp' },
+    { id: 35, category: 'art', image: 'artworks/techno_birthday.webp' },
+
+    { id: 36, category: 'stickers', image: 'stickers/batman_robin_sticker.webp' },
+    { id: 37, category: 'stickers', image: 'stickers/dante_lonely_sticker.webp' },
+    { id: 38, category: 'stickers', image: 'stickers/tim_drake_sticker.webp' },
   ];
 
   const filteredItems = activeFilter === 'all'
@@ -759,7 +763,7 @@ const Portfolio = () => {
               <div className="hero-image-container">
                 <div className="red-background"></div>
                 <img
-                  src="/artworks/duck girl clear.png"
+                  src="/artworks/duck girl clear.webp"
                   alt="duck girl"
                 />
               </div>
@@ -798,7 +802,7 @@ const Portfolio = () => {
                 {
                   id: 1,
                   title: "AnimeGo 2025",
-                  image: "/artworks/stall_event1.png",
+                  image: "/images/stall_event1.webp",
                   preview: "My first ever artist alley experience will always be a special one, and AnimeGo had everything all at once! I met so many amazing local artists with the smaller venue...",
                   full: `
                     My first ever artist alley experience will always be a special one, and AnimeGo had everything all at once!
@@ -815,7 +819,7 @@ const Portfolio = () => {
                 {
                   id: 2,
                   title: "Supanova Adelaide 2025",
-                  image: "/artworks/stall_event2.png",
+                  image: "/images/stall_event2.webp",
                   preview: "This was a massive step up from the smaller AnimeGo event the week before! I was vastly underprepared with the stock as I had definitely not stocked enough for two conventions in a row. Despite this...",
                   full: `
                   This was a massive step up from the smaller AnimeGo event the week before! I was vastly underprepared with the stock as I had definitely not stocked enough for two conventions in a row. Despite this, it was a great experience! I learnt a lot about how to keep everything more organised, and started discussing commissions to talk other business opportunities besides the merchandise I sold. The three days of 9am-6pm was truly brutal, but so worth it. My highlights are always the amazing cosplayers and artists that I got to meet on the day. It really inspired me to keep creating and make even better works for my future events.
@@ -824,7 +828,7 @@ const Portfolio = () => {
                 {
                   id: 3,
                   title: "AvCon Christmas Markets 2025",
-                  image: "/artworks/stall_event3.png",
+                  image: "/images/stall_event3.webp",
                   preview: "I had an amazing time with the AvCon Christmas markets, and I think this one especially hit a bit closer. Supporting and spreading awareness of charity organisations has always been a goal of mine with my art...",
                   full: `
                   I had an amazing time with the AvCon Christmas markets, and I think this one especially hit a bit closer. Supporting and spreading awareness of charity organisations has always been a goal of mine with my art as well. A lot of my inspiration and years drawing came from my time as a Technoblade fan. His passing impacted me a lot mentally, and I think being able to raise money for the Sarcoma foundation in this event helped bring a part of that healing to a close as well. Knowing that I can support something and help the community with these donations, as well as the Games 4 Kids initiative, made me know that starting this stall was worth it. This was the last artist alley I participated in the year, and what a sweet note it was to end 2025 off with!
