@@ -38,9 +38,9 @@ const MusicPlayer = () => {
                 </div>
             </div>
             <div className="musicPlayerDetails">
-                <h3>{nowPlaying?.title || "No song playing"}</h3>
-                <p><i>{nowPlaying?.albumName || "Unknown Album"}</i></p>
-                <p>{nowPlaying?.artist || "Unknown Artist"}</p>
+                <h3>{nowPlaying?.title || "Wish"}</h3>
+                <p><i>{nowPlaying?.albumName || "DAYDREAM"}</i></p>
+                <p>{nowPlaying?.artist || "Day6"}</p>
             </div>
         </div >
     );

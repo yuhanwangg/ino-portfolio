@@ -1,0 +1,53 @@
+.con-schedule {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-card {
+    background: #dc2626;
+    padding: 1rem;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.schedule-description {
+    margin-bottom: 1rem;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+}
+
+.event-meta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.image-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}

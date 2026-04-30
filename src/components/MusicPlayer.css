@@ -18,8 +18,8 @@
 
 .musicPlayerImage img {
     position: absolute;
-    width: 55%;
-    height: 55%;
+    width: 60%;
+    height: 60%;
     border-radius: 50%;
     /* border: 1px solid white; */
     top: 50%;
@@ -37,8 +37,8 @@
 }
 
 .musicPlayerImage {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     border: 2px solid black;
     background-color: black;

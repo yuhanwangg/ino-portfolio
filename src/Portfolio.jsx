@@ -1,6 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import './Portfolio.css';
 import MusicPlayer from './components/MusicPlayer.jsx';
+import { FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
+import ArtStallCarousel from './components/ArtStallCarousel.jsx';
+import ConventionList from "./components/ConventionList";
 
 const PORTFOLIO_ITEMS = [
   { id: 1, category: 'art', image: 'artworks/norway belvoedkv.webp' },
@@ -43,10 +46,26 @@ const PORTFOLIO_ITEMS = [
   { id: 38, category: 'stickers', image: 'stickers/tim_drake_sticker.webp' },
 ];
 
+const CONVENTION_EVENTS = [
+  {
+    title: "Oz Comic-Con Adelaide",
+    date: "May 30-31 2026",
+    table: "Table AA88",
+    image: "map coming soon!.png"
+  },
+  {
+    title: "AvCon",
+    date: "July 4-5 2026",
+    table: "Table N/A",
+    image: "map coming soon!.png"
+  }
+];
+
 const ART_STALL_EVENTS = [
   {
     id: 1,
     title: 'AnimeGo 2025',
+    date: '26/10/2025',
     image: '/images/stall_event1.webp',
     preview:
       "My first ever artist alley experience will always be a special one, and AnimeGo had everything all at once! I met so many amazing local artists with the smaller venue...",
@@ -63,6 +82,7 @@ of asked for a better first experience!`,
   {
     id: 2,
     title: 'Supanova Adelaide 2025',
+    date: '30/10/2025 - 1/11/2025',
     image: '/images/stall_event2.webp',
     preview:
       "This was a massive step up from the smaller AnimeGo event the week before! I was vastly underprepared with the stock as I had definitely not stocked enough for two conventions in a row. Despite this...",
@@ -76,6 +96,7 @@ It really inspired me to keep creating and make even better works for my future 
   {
     id: 3,
     title: 'AvCon Christmas Markets 2025',
+    date: '12/12/2025 - 13/12/2025',
     image: '/images/stall_event3.webp',
     preview:
       "I had an amazing time with the AvCon Christmas markets, and I think this one especially hit a bit closer. Supporting and spreading awareness of charity organisations has always been a goal of mine with my art...",
@@ -87,6 +108,10 @@ that healing to a close as well. Knowing that I can support something and help t
 as well as the Games 4 Kids initiative, made me know that starting this stall was worth it. This was the last
 artist alley I participated in the year, and what a sweet note it was to end 2025 off with!`,
   },
+
+  {
+
+  }
 ];
 
 const FILTER_ACTIVE_CLASS = {
@@ -108,16 +133,14 @@ const Portfolio = () => {
     [activeFilter],
   );
 
-  const toggleCard = (id) => setExpandedCard((prev) => (prev === id ? null : id));
-
   return (
     <div>
       <header>
         <div>{/* logo placeholder */}</div>
         <nav className="font-inter">
-          <a href="#about">About Me</a>
-          <a href="#projects">Portfolio</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">/ About Me</a>
+          <a href="#projects">/ Portfolio</a>
+          <a href="#contact">/ Contact</a>
         </nav>
       </header>
 
@@ -135,11 +158,7 @@ const Portfolio = () => {
             <p className="hero-subtitle font-lora">
               My name is <span className="name">Ino</span>
             </p>
-            {/* <div className="pixel-grid" aria-hidden="true">
-              {Array.from({ length: 16 }, (_, i) => (
-                <div key={i} className="pixel" />
-              ))}
-            </div> */}
+
             <div className="hero-info font-inter">
               <p><strong>Freelance Illustrator</strong></p>
               <p>Kaurna Land</p>
@@ -159,7 +178,7 @@ const Portfolio = () => {
         <div className="art-stall-container">
           <div className="section-header">
             <div className="line" />
-            <h2 className="font-archivo">Artist Alleys</h2>
+            <h2 className="font-inter">Artist Alleys</h2>
             <div className="line-flex" />
           </div>
 
@@ -169,39 +188,28 @@ const Portfolio = () => {
             </h3>
           </div>
 
-          <p className="portfolio-description font-lora">
-            Illustration has been a passion of mine ever since I was kid wanting to draw my favourite characters onto paper. I love
-            bringing to life these wonderful characters that made me who I am today, where every piece of me I see a reflection in
-            the media and art I consume.
+          <div className="portfolio-section">
+            <div className="portfolio-content">
+              <p className="portfolio-description font-lora">
+                Illustration has been a passion of mine ever since I was kid wanting to draw my favourite characters onto paper. I love
+                bringing to life these wonderful characters that made me who I am today, where every piece of me I see a reflection in
+                the media and art I consume.</p>
 
-            It's always been a dream of mine to do art stalls since I first attended AvCon in 2019. I finally had the chance
-            to do so at the end of 2025, and what an absolute dream it has been! Sharing my art,
-            meeting other artists, and connecting with the community has been one of
-            the highlights of that year.
+              <p className="portfolio-description font-lora">It's always been a dream of mine to do art stalls since I first attended AvCon in 2019. I finally had the chance
+                to do so at the end of 2025, and what an absolute dream it has been! Sharing my art,
+                meeting other artists, and connecting with the community has been one of
+                the highlights of that year.
+              </p>
+            </div>
 
-          </p>
-
-          <div className="art-stall-grid">
-            {ART_STALL_EVENTS.map((event) => {
-              const isExpanded = expandedCard === event.id;
-              return (
-                <div key={event.id} className={`art-stall-card${isExpanded ? ' expanded' : ''}`}>
-                  <img src={event.image} alt={event.title} />
-                  <div className="art-stall-card-content">
-                    <h4 className="font-archivo">{event.title}</h4>
-                    <p className="font-inter">{isExpanded ? event.full : event.preview}</p>
-                    <button
-                      className="read-more-btn font-inter"
-                      onClick={() => toggleCard(event.id)}
-                      aria-expanded={isExpanded}
-                    >
-                      {isExpanded ? 'Read Less —' : 'Read More +'}
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
+            <ConventionList events={CONVENTION_EVENTS} />
           </div>
+
+          <ArtStallCarousel
+            events={ART_STALL_EVENTS}
+            expandedCard={expandedCard}
+            setExpandedCard={setExpandedCard}
+          />
         </div>
       </section>
 
@@ -209,7 +217,8 @@ const Portfolio = () => {
         <div className="projects-container">
           <div className="section-header">
             <div className="line" />
-            <h2 className="font-archivo">Projects</h2>
+            <h2 className="font-inter">Projects</h2>
+
             <div className="line-flex" />
           </div>
 
@@ -225,6 +234,17 @@ const Portfolio = () => {
             portfolio, and to see what stickers and keychains I have available at my stall! Online shop will be coming
             soon...
           </p>
+
+          {/* <section id="best-works" className="best-works-section">
+            <div className="favourite-works">
+              <div className="section-header">
+                <h1 className="font-lora">Favourite Works</h1>
+              </div>
+            </div>
+            <p className="portfolio-description font-lora">
+              These are some of my favourite works! For my full portfolio of works, scroll down
+            </p>
+          </section> */}
 
           <div className="filter-buttons" role="group" aria-label="Filter portfolio by category">
             {[
@@ -264,7 +284,7 @@ const Portfolio = () => {
         <div className="contact-container">
           <div className="section-header">
             <div className="line" />
-            <h2 className="font-archivo">Contact</h2>
+            <h2 className="font-inter">Contact</h2>
             <div className="line-flex" />
           </div>
 
