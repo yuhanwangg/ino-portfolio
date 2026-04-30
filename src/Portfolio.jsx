@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import './Portfolio.css';
 import MusicPlayer from './components/MusicPlayer.jsx';
-import { FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
 import ArtStallCarousel from './components/ArtStallCarousel.jsx';
 import ConventionList from "./components/ConventionList";
 
