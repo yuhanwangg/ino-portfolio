@@ -109,7 +109,14 @@ artist alley I participated in the year, and what a sweet note it was to end 202
   },
 
   {
-
+    id: 4,
+    title: 'Lilypond Artist Markets 2025',
+    date: '28/3/2026 - 29/3/2026',
+    image: '/images/stall_event4.webp',
+    preview:
+      "This was my first time holding a half-table, and the first table to kick off 2026! Sky was as accommodating as ever, and everything ran so smoothly...",
+    full: `This was my first time holding a half-table, and the first table to kick off 2026! Sky was as accommodating as ever, and everything ran so smoothly. An artist running the event meant they know every small thing that bothers an artist at these alleys and fixed it. The organisation was amazing, communication transparent, and the people attending were amazing to talk to! Grateful to share the table with Jsnow_draws <3
+`
   }
 ];
 
@@ -171,7 +178,7 @@ const Portfolio = () => {
 
           <div className="hero-image-wrapper">
             <div className="hero-image-container">
-              <img src="/artworks/duck girl clear.webp" alt="Ino's illustration of a duck girl" />
+              <img src="/artworks/duck girl clear.webp" alt="illustration of a duck girl" />
             </div>
           </div>
         </div>
@@ -221,7 +228,6 @@ const Portfolio = () => {
           <div className="section-header">
             <div className="line" />
             <h2 className="font-inter">Projects</h2>
-
             <div className="line-flex" />
           </div>
 
@@ -232,35 +238,40 @@ const Portfolio = () => {
             <div className="red-square" aria-hidden="true" />
           </div>
 
+          <div className="favourite-works">
+            <div className="section-header">
+              <h1 className="font-lora">Favourite Works</h1>
+            </div>
+
+            <p className="portfolio-description font-lora">
+              These are some of my favourite works! For my full portfolio of works, scroll down.
+            </p>
+
+            <div className="favourite-wrapper">
+              <div className="favourite-grid">
+                {favouriteWorks.map((item) => (
+                  <div key={item.id} className="favourite-item">
+                    <img src={item.image} alt={`Favourite work ${item.id}`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <br></br>
+          <br></br>
+
+          <div className="section-header">
+            <div className="line" />
+            <h2 className="font-inter">Full portfolio</h2>
+            <div className="line-flex" />
+          </div>
+
           <p className="portfolio-description font-lora">
-            This is my portfolio containing my art, merchandise, and more! Use the filters below to check out my art
+            Use the filters below to check out my art
             portfolio, and to see what stickers and keychains I have available at my stall! Online shop will be coming
             soon...
           </p>
-
-          <section id="best-works" className="best-works-section">
-            <div className="favourite-works">
-
-              <div className="section-header">
-                <h1 className="font-lora">Favourite Works</h1>
-              </div>
-
-              <p className="portfolio-description font-lora">
-                These are some of my favourite works! For my full portfolio of works, scroll down.
-              </p>
-
-              <div className="favourite-wrapper">
-                <div className="favourite-grid">
-                  {favouriteWorks.map((item) => (
-                    <div key={item.id} className="favourite-item">
-                      <img src={item.image} alt={`Favourite work ${item.id}`} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-            </div>
-          </section>
 
           <div className="filter-buttons" role="group" aria-label="Filter portfolio by category">
             {[
@@ -336,7 +347,7 @@ const Portfolio = () => {
       </section>
 
       <footer>
-        <p className="font-inter">© 2025 Ino - inozuart. All rights reserved.</p>
+        <p className="font-inter">© 2026 Ino - inozuart. All rights reserved.</p>
       </footer>
     </div>
   );
