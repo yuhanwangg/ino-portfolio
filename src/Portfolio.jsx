@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import './Portfolio.css';
+import MusicPlayer from './components/MusicPlayer.jsx';
 
 const PORTFOLIO_ITEMS = [
   { id: 1, category: 'art', image: 'artworks/norway belvoedkv.webp' },
@@ -132,19 +133,17 @@ const Portfolio = () => {
               H<span className="italic">E</span>LL<span className="italic">O</span>.
             </h1>
             <p className="hero-subtitle font-lora">
-              My name is<br />
-              <span className="name">Ino — inozuart</span>
+              My name is <span className="name">Ino</span>
             </p>
-            <div className="pixel-grid" aria-hidden="true">
+            {/* <div className="pixel-grid" aria-hidden="true">
               {Array.from({ length: 16 }, (_, i) => (
                 <div key={i} className="pixel" />
               ))}
-            </div>
+            </div> */}
             <div className="hero-info font-inter">
               <p><strong>Freelance Illustrator</strong></p>
-              <p>University of Adelaide — 2025</p>
-              <p>Graduate</p>
-              <p className="welcome">Welcome to my portfolio website</p>
+              <p>Kaurna Land</p>
+              <MusicPlayer />
             </div>
           </div>
 
