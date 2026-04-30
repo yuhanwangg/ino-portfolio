@@ -618,7 +618,7 @@ nav a:hover {
 
 .favourite-item img {
     width: 100%;
-    height: auto;
+    max-height: 35rem;
     display: block;
     object-fit: contain;
 }
