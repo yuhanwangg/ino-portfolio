@@ -6,16 +6,16 @@ import ConventionList from "./components/ConventionList";
 
 const PORTFOLIO_ITEMS = [
   { id: 1, category: 'art', image: 'artworks/norway belvoedkv.webp' },
-  { id: 2, category: 'art', image: 'artworks/sanji cooking.webp' },
+  { id: 2, category: 'art', image: 'artworks/sanji cooking.webp', favourite: true },
   { id: 3, category: 'art', image: 'artworks/monster_trio.webp' },
-  { id: 4, category: 'art', image: 'artworks/batman.webp' },
+  { id: 4, category: 'art', image: 'artworks/batman.webp', favourite: true },
   { id: 5, category: 'art', image: 'artworks/bruce.webp' },
   { id: 6, category: 'art', image: 'artworks/techno 10 million project.webp' },
-  { id: 7, category: 'art', image: 'artworks/sunkyu high school.webp' },
+  { id: 7, category: 'art', image: 'artworks/sunkyu high school.webp', favourite: true },
   { id: 8, category: 'art', image: 'artworks/kris_and_frisk.webp' },
   { id: 9, category: 'art', image: 'artworks/gym_sesh.webp' },
   { id: 10, category: 'art', image: 'artworks/dante_all_three.webp' },
-  { id: 11, category: 'art', image: 'artworks/dante_vergil.webp' },
+  { id: 11, category: 'art', image: 'artworks/dante_vergil.webp', favourite: true },
   { id: 12, category: 'art', image: 'artworks/KAKYOINN.webp' },
   { id: 13, category: 'art', image: 'artworks/alley.webp' },
   { id: 14, category: 'art', image: 'artworks/hongice yeee.webp' },
@@ -36,8 +36,8 @@ const PORTFOLIO_ITEMS = [
   { id: 29, category: 'stickers', image: 'stickers/gekko_sticker.webp' },
   { id: 30, category: 'stickers', image: 'stickers/vergil_chair_back.webp' },
   { id: 31, category: 'stickers', image: 'stickers/vergil_chair_front.webp' },
-  { id: 32, category: 'art', image: 'artworks/castle_techno.webp' },
-  { id: 33, category: 'art', image: 'artworks/heavens_gate.webp' },
+  { id: 32, category: 'art', image: 'artworks/castle_techno.webp', favourite: true },
+  { id: 33, category: 'art', image: 'artworks/heavens_gate.webp', favourite: true },
   { id: 34, category: 'art', image: 'artworks/masquerade_techno.webp' },
   { id: 35, category: 'art', image: 'artworks/techno_birthday.webp' },
   { id: 36, category: 'stickers', image: 'stickers/batman_robin_sticker.webp' },
@@ -131,6 +131,10 @@ const Portfolio = () => {
         : PORTFOLIO_ITEMS.filter((item) => item.category === activeFilter),
     [activeFilter],
   );
+
+  const favouriteWorks = useMemo(() => {
+    return PORTFOLIO_ITEMS.filter((item) => item.favourite);
+  }, []);
 
   return (
     <div>
@@ -234,16 +238,29 @@ const Portfolio = () => {
             soon...
           </p>
 
-          {/* <section id="best-works" className="best-works-section">
+          <section id="best-works" className="best-works-section">
             <div className="favourite-works">
+
               <div className="section-header">
                 <h1 className="font-lora">Favourite Works</h1>
               </div>
+
+              <p className="portfolio-description font-lora">
+                These are some of my favourite works! For my full portfolio of works, scroll down.
+              </p>
+
+              <div className="favourite-wrapper">
+                <div className="favourite-grid">
+                  {favouriteWorks.map((item) => (
+                    <div key={item.id} className="favourite-item">
+                      <img src={item.image} alt={`Favourite work ${item.id}`} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
-            <p className="portfolio-description font-lora">
-              These are some of my favourite works! For my full portfolio of works, scroll down
-            </p>
-          </section> */}
+          </section>
 
           <div className="filter-buttons" role="group" aria-label="Filter portfolio by category">
             {[

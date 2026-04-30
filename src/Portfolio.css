@@ -592,6 +592,42 @@ nav a:hover {
     opacity: 0.7;
 }
 
+.best-works-section {
+    padding: 4rem 2rem;
+}
+
+.favourite-works {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.favourite-grid {
+    column-count: 3;
+    column-gap: 1rem;
+    margin-top: 2rem;
+}
+
+.favourite-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    transition: transform 0.2s ease;
+}
+
+.favourite-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.favourite-item:hover {
+    transform: scale(1.02);
+}
+
+
 /* ── Contact ── */
 .contact-section {
     padding: 4rem 2rem;
